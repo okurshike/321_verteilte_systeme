@@ -26,7 +26,8 @@ spring:
           globalcors:
             cors-configurations:
               '[/**]':
-                allowedOrigins: "http://localhost:5173"
+                # beide: Vite zeigt 127.0.0.1 an, für CORS ist das eine andere Adresse als localhost
+                allowedOrigins: ["http://localhost:5173", "http://127.0.0.1:5173"]
                 allowedMethods: [GET, POST, PUT, DELETE, OPTIONS]
                 allowedHeaders: "*"
 
