@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 // "service-01" ist der Name in Eureka, Feign baut daraus die HTTP-Aufrufe selbst
-@FeignClient("service-01")
+@FeignClient(name = "service-01", fallback = BooksClientFallback.class)
 public interface BooksClient {
     @GetMapping("/books")
     List<Book> getBooks();
